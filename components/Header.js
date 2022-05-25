@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className='h-14 w-full bg-white shadow-lg shadow-gray-800 flex item-center justify-center'>
       <div className="h-full w-full px-6 md:px-0 md:max-w-screen-lg flex items-center justify-between ">
-        <Link href='/' passhref className='w-20'>
+        <Link href='/' passhref className='w-20 h-full'>
           <Image
             src='/images/logo.svg'
             alt='logo'
