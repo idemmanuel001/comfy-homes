@@ -104,4 +104,11 @@ export default function Home() {
 export async function getStaticProps() {
   const propertiesForSale = await fetchApi(`${baseUrl}/properties/list`);
   const propertiesForRent = await fetchApi(`${baseUrl}/properties/list`);
+  
+  return{
+    props: {
+      propertiesForSale: propertiesForSale,
+      propertiesForSale: propertiesForRent
+    }
+  }
 }
