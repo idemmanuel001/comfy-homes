@@ -20,10 +20,10 @@ export default function Header(props) {
 
         <nav className="flex items-center justify-end w-1/2">
           <Link href='/'>
-            <span className='text-white text-sm md:text-base bg-blue-800  hover:opacity-80 transition ease-in-out duration-300 font-semibold rounded-full px-3 py-0.5 md:px-6 md:py-1 h-full flex justify-center items-center cursor-pointer'>Buy</span>
+            <span className='text-white shadow md:shadow-md text-sm md:text-base bg-blue-800  hover:opacity-80 transition ease-in-out duration-300 font-semibold rounded-full px-3 py-0.5 md:px-6 md:py-1 h-full flex justify-center items-center cursor-pointer'>Buy</span>
           </Link>
           <Link href='/'>
-            <span className='text-white text-sm md:text-base bg-blue-800 hover:opacity-80 transition ease-in-out duration-300 font-semibold rounded-full px-3 py-0.5 md:px-6 md:py-1 ml-2 md:ml-4  h-full flex justify-center items-center cursor-pointer'>Rent</span>
+            <span className='text-white shadow md:shadow-md  text-sm md:text-base bg-blue-800 hover:opacity-80 transition ease-in-out duration-300 font-semibold rounded-full px-3 py-0.5 md:px-6 md:py-1 ml-2 md:ml-4  h-full flex justify-center items-center cursor-pointer'>Rent</span>
           </Link>
         </nav>
       </div>
