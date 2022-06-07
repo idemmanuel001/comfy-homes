@@ -1,59 +1,28 @@
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { set } from 'nprogress';
 import Header from '../components/Header';
 import Property from '../components/Property';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
+import HeroBgSlider from '../components/HeroBgSlider';
 
 
 
 
-export default function Home() {
-  const [count, setCount] = useState(0);
-  const [imageIndex, setImageIndex] = useState(0);
+export default function Home({properties}) {
 
 
-  const heroImages = [
-    '/images/hero-image-1.jpg',
-    '/images/hero-image-2.jpg',
-    '/images/hero-image-3.jpg'
-  ];
-  useEffect(() => {
-    const lastIndex = heroImages.length - 1;
-    if (count > lastIndex) {
-      setCount(0);
-    }
-  }, [count, heroImages.length]);
-
-  useEffect(() => {
-    let slider = setInterval(() => {
-      setCount(count + 1);
-      setImageIndex(count);
-      //console.clear();
-    }, 8000);
-    return () => {
-      clearInterval(slider);
-    };
-  }, [count]);
 
 
   return (
-
+   <>
+    <Header properties={properties} />
     <main className='w-full h-full bg-white'>
       <section className="flex flex-col items-center justify-center w-full bg-blue-500 -z-10 h-65-vh md:h-85-vh">
 
         {/* setting image as the background */}
         <div className="absolute w-full h-65-vh md:h-85-vh ">
-          <Image
-            src={heroImages[imageIndex]}
-            alt='hero section image'
-            priority='true'
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          />
-
+         <HeroBgSlider />
         </div>
 
         {/* background overlay with content*/}
@@ -73,7 +42,7 @@ export default function Home() {
                 placeholder='Search by cities in the UAE eg Dubai'
                 id="search"
                 className='block w-full px-3 py-1 m-0 text-base font-normal transition ease-in-out bg-white border border-gray-400 border-solid rounded outline-none form-control first-line:text-gray-700 bg-clip-padding drop-shadow-md hover:drop-shadow-xl focus:text-gray-700 md:h-12 focus:bg-white focus:border-blue-600 focus:outline-none placeholder:text-gray-200' />
-
+             
               <button
                 type="submit"
                 className="block w-20 px-3 py-1 ml-1 font-bold text-white transition duration-300 ease-in-out bg-blue-800 border border-blue-800 border-solid rounded outline-none md:w-32 md:h-12 md:text-xl drop-shadow-md hover:drop-shadow-xl hover:opacity-80 focus:opacity-70 focus:outline-none"
@@ -97,18 +66,29 @@ export default function Home() {
         </div>
       </section>
 
-    </main>);
+    
+    </main>
+    </>);
 }
 
 
 export async function getStaticProps() {
-  const propertiesForSale = await fetchApi(`${baseUrl}/properties/list`);
-  const propertiesForRent = await fetchApi(`${baseUrl}/properties/list`);
+
+  //const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`);
+ // const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=25`);
   
-  return{
+ /*  const response = await axios.get((`https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`),
+    {
+      headers: {
+        'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
+        'X-RapidAPI-Key': '97795a3803msh325e2ed4a7bbe59p1dd9b0jsnab71b10b7bab'
+        //process.env.NEXT_PUBLIC_RAPID_API_KEY
+      }
+    }); */
+
+  return {
     props: {
-      propertiesForSale: propertiesForSale,
-      propertiesForSale: propertiesForRent
-    }
-  }
+      properties: { data: 'this is a test data from the getstatic propsin next jsform emmanue;' },
+    },
+  };
 }

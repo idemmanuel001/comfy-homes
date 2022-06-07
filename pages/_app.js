@@ -1,12 +1,12 @@
-import Header from '../components/Header';
+//import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/globals.css';
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps}) {
   return (
     <>
-      <Header />
+      
       <Component {...pageProps} />
       <Footer />
     </>
@@ -14,3 +14,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
