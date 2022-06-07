@@ -9,14 +9,13 @@ import HeroBgSlider from '../components/HeroBgSlider';
 
 
 
-export default function Home({properties}) {
-
+export default function Home({ propertiesForRent, propertiesForSale }) {
 
 
 
   return (
    <>
-    <Header properties={properties} />
+      <Header propertiesForRent={propertiesForRent} propertiesForSale={propertiesForSale} />
     <main className='w-full h-full bg-white'>
       <section className="flex flex-col items-center justify-center w-full bg-blue-500 -z-10 h-65-vh md:h-85-vh">
 
@@ -55,14 +54,14 @@ export default function Home({properties}) {
         </div>
 
       </section>
-      <section className="flex flex-col items-center w-10/12 px-2 py-4 mx-auto md:px-4 md:py-6 md:max-w-screen-lg">
+      <section className="flex flex-col items-center justify-center w-10/12 px-2 py-4 mx-auto md:px-4 md:py-6 md:max-w-screen-lg">
         <h2
           className='flex items-center text-3xl font-semibold text-center text-gray-800 md:text-4xl'
-        >Explore Rentals in Dubai</h2>
+        >Explore Rentals in the UAE</h2>
 
         {/* Property container  */}
-        <div className="grid my-6 md:my-8">
-          <Property />
+          <div className="grid w-full grid-rows-1 gap-5 my-6 md:grid-rows-3 md:my-8">
+            {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
         </div>
       </section>
 
@@ -71,24 +70,16 @@ export default function Home({properties}) {
     </>);
 }
 
-/* 
+
 export async function getStaticProps() {
 
-  //const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`);
- // const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=25`);
-  
-  const response = await axios.get((`https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`),
-    {
-      headers: {
-        'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
-        'X-RapidAPI-Key': '97795a3803msh325e2ed4a7bbe59p1dd9b0jsnab71b10b7bab'
-        //process.env.NEXT_PUBLIC_RAPID_API_KEY
-      }
-    });
+  const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=25`);
+  const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`);
 
   return {
     props: {
-      properties: { data: 'this is a test data from the getstatic propsin next jsform emmanue;' },
+      propertiesForRent: propertiesForRent?.hits,
+      propertiesForSale: propertiesForSale?.hits,
     },
   };
-} */
+}

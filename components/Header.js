@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-//import { fetchApi, baseUrl } from '../utils/fetchApi';
-import axios from 'axios';
 
-export default function Header(props) {
- console.log(`${props.properties.data} Properties `);
-
+export default function Header({ propertiesForSale, propertiesForRent }) {
+ 
   return (
     <header className='flex justify-center w-full bg-white shadow-2xl h-14 item-center'>
       <div className="flex items-center justify-between w-full h-full px-2 md:px-4 md:max-w-screen-lg">
