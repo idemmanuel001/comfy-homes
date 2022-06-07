@@ -71,24 +71,24 @@ export default function Home({properties}) {
     </>);
 }
 
-
+/* 
 export async function getStaticProps() {
 
   //const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`);
  // const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=25`);
   
- /*  const response = await axios.get((`https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`),
+  const response = await axios.get((`https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=25`),
     {
       headers: {
         'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
         'X-RapidAPI-Key': '97795a3803msh325e2ed4a7bbe59p1dd9b0jsnab71b10b7bab'
         //process.env.NEXT_PUBLIC_RAPID_API_KEY
       }
-    }); */
+    });
 
   return {
     props: {
       properties: { data: 'this is a test data from the getstatic propsin next jsform emmanue;' },
     },
   };
-}
+} */
