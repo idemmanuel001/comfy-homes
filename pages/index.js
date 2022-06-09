@@ -56,17 +56,18 @@ export default function Home({ propertiesForRent, propertiesForSale }) {
       </section>
       <section className="w-10/12 px-2 py-4 mx-auto md:px-4 md:py-6 md:max-w-screen-lg">
         <h2
-          className='flex items-center text-3xl font-semibold text-center text-gray-800 md:text-4xl'
+          className='text-3xl font-semibold text-center text-gray-800 md:text-4xl'
         >Explore Rentals in the UAE</h2>
 
         {/* Property container  */}
-          <div className="flex flex-col flex-wrap my-6 overflow-hidden md:flex-row md:my-8">
+          <div className="grid grid-rows-1 md:grid-cols-3 gap-8 md:gap-10 my-6 overflow-hidden md:flex-row md:my-8">
             {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
         </div>
       </section>
 
     
     </main>
+    
     </>);
 }
 

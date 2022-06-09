@@ -11,7 +11,7 @@ export default function Property({ property: { coverPhoto, price, rentFrequency,
         <Link 
         href={`/property/${externalID}`} 
         passHref 
-        className='block mx-auto my-6 overflow-hidden cursor-pointer md:my-9'
+        className='block mx-auto my-8 overflow-hidden cursor-pointer md:my-10'
         >
             <div className="flex flex-col items-center w-fit overflow-hidden bg-gray-100 rounded-md shadow-md">
 
