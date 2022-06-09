@@ -10,6 +10,7 @@ export default function Header({ propertiesForSale, propertiesForRent }) {
           <Image
             src='/images/logo.svg'
             alt='logo'
+            priority='true'
             width='200'
             height='30'
           />
