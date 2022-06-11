@@ -3,10 +3,11 @@ import Image from 'next/image';
 import { set } from 'nprogress';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Property from '../components/Property';
+import Property from '../components/PropertyForRent';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import HeroBgSlider from '../components/HeroBgSlider';
-import Search from '../components/Search';
+import SearchBar from '../components/SearchBar';
+import PropertyForRent from '../components/PropertyForRent';
 
 
 
@@ -37,7 +38,7 @@ export default function Home({ propertiesForRent, propertiesForSale }) {
             >Let’s find a home that’s perfect for you in the UAE</p>
 
           {/* Search Component */}
-            <Search />
+            <SearchBar />
 
           </div>
         </div>
@@ -50,7 +51,7 @@ export default function Home({ propertiesForRent, propertiesForSale }) {
 
         {/* Property container  */}
           <div className="grid grid-rows-1 gap-8 my-6 overflow-hidden md:grid-cols-3 md:gap-10 md:flex-row md:my-8">
-            {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
+            {propertiesForRent.map((property) => <PropertyForRent property={property} key={property.id} />)}
         </div>
       </section>
 

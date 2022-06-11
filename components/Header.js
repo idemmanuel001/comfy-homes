@@ -18,11 +18,11 @@ export default function Header({ propertiesForSale, propertiesForRent }) {
 
         <nav className="flex items-center justify-end w-1/2">
           <Link href='/'>
-            <span className='text-white shadow md:shadow-md text-sm md:text-base bg-blue-800  hover:opacity-80 transition ease-in-out duration-300 font-semibold rounded-full px-3 py-0.5 md:px-6 md:py-1 h-full flex justify-center items-center cursor-pointer'>Buy</span>
+            <span className='flex items-center justify-center h-full px-5 py-1 text-sm font-semibold text-white transition duration-300 ease-in-out rounded-lg shadow cursor-pointer md:shadow-md md:text-base bg-gradient-to-r from-blue-400 to-blue-800 hover:text-black hover:from-blue-800 hover:to-blue-400 md:px-6 md:py-2'>
+              Buy a Home
+            </span>
           </Link>
-          <Link href='/'>
-            <span className='text-white shadow md:shadow-md  text-sm md:text-base bg-blue-800 hover:opacity-80 transition ease-in-out duration-300 font-semibold rounded-full px-3 py-0.5 md:px-6 md:py-1 ml-2 md:ml-4  h-full flex justify-center items-center cursor-pointer'>Rent</span>
-          </Link>
+      
         </nav>
       </div>
     </header>
