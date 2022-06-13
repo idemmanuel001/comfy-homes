@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { fetchApi, baseUrl } from '../utils/fetchApi';
 import Property from '../components/Property';
 
 export default function propertiesForSale({ propertiesForSale }) {
@@ -7,12 +8,12 @@ export default function propertiesForSale({ propertiesForSale }) {
     <>
       <Head>
         <title>Buy a home in the U.A.E</title>
-      </Head>
-      <main className='w-full h-full bg-white'>
+      </Head> 
+      <main className='w-full h-full bg-white md:mt-4'>
 
-        <section className="w-10/12 px-2 py-4 mx-auto md:px-4 md:py-8 md:max-w-screen-lg">
+        <section className="w-10/12 px-2 mx-auto md:px-4 md:py-2 md:max-w-screen-lg">
           <h2
-            className='text-3xl font-semibold text-center text-gray-800 md:text-4xl'
+            className='mt-6 text-3xl  font-semibold text-center text-gray-800 md:text-4xl'
           >Buy a Home in the U.A.E</h2>
 
           {/* Property container  */}
@@ -27,7 +28,7 @@ export default function propertiesForSale({ propertiesForSale }) {
 }
 
 export async function getStaticProps() {
-  const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=27`);
+  const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=24`);
 
   return {
     props: {
