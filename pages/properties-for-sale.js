@@ -13,7 +13,7 @@ export default function propertiesForSale({ propertiesForSale }) {
 
         <section className="w-10/12 px-2 mx-auto md:px-4 md:py-2 md:max-w-screen-lg">
           <h2
-            className='mt-6 text-3xl  font-semibold text-center text-gray-800 md:text-4xl'
+            className='my-8 text-3xl  font-semibold text-center text-gray-800 md:text-4xl'
           >Buy a Home in the U.A.E</h2>
 
           {/* Property container  */}

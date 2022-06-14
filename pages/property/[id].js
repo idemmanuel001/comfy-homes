@@ -5,11 +5,10 @@ import millify from 'millify';
 import { fetchApi } from '../../utils/fetchApi';
 import { baseUrl } from '../../utils/fetchApi';
 
-export default function PropertyDetails() {
+export default function PropertyDetails({ PropertyDetails: { price, rentFrequency, rooms, title, baths, agency, isVerified, description, type, purpose, amenities, furnishingStatus, photos } }) {
     return (
         <main className='w-full h-full bg-white'>
             <section className="w-10/12 px-2 py-4 mx-auto md:px-4 md:py-8 md:max-w-screen-lg">
-
 
             </section>
 

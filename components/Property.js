@@ -7,7 +7,7 @@ import millify from 'millify';
 import defaultImage from '/public/images/house.jpg';
 
 /* Property card */
-export default function Property({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, externalID }}) {
+export default function Property({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, externalID, isVerified }}) {
     return (
         <Link 
         href={`/property/${externalID}`} 
@@ -25,8 +25,11 @@ export default function Property({ property: { coverPhoto, price, rentFrequency,
            />
                    <div className="flex flex-col items-center p-2 text-gray-800 md:py-3 md:px-2 ">
                     <h3 className='py-1 text-lg font-semibold text-center' > {title.length > 30 ? title.substring(0, 30) + '...' : title }</h3>
-                    <p className='flex text-lg italic' >
-                        AED {millify(price)}{rentFrequency && `/${rentFrequency}`} 
+                    <p className='flex items-center justify-center text-lg italic' >
+                        <span className='mx-1.5'>AED {millify(price)}{rentFrequency && `/${rentFrequency}`} </span>
+                        <span className='text-green-400 mx-1.5' >
+                            {isVerified && <GoVerified />}
+                        </span>
                     </p>
                     
                     <p className="flex items-center  justify-around mt-1.5 w-4/5 text-blue-400">
