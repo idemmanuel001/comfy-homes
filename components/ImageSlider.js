@@ -1,68 +1,70 @@
-import { useContext } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 
 
 //property details Image Slider
 export default function ImageSlider({ photos }) {
+    const [index, setIndex] = useState(0);
+
     return (
-        <ScrollMenu
-            LeftArrow={LeftArrow}
-            RightArrow={RightArrow} 
-            style={{overflow: 'hidden'}} >
+        <div className="relative max-w-2xl mx-auto overflow-hidden h-96 mt-20s">
 
-            {photos.map((photo) => {
-                return (
-                    <div
-                        key={photo.id}
-                        className='max-w-4xl overflow-hidden  h-65-vh'
-                    >
-                        <Image
-                            alt='Property Photo'
-                            src={photo.url}
-                            width={1000}
-                            height={500}
-                            sizes='(max-width:500px) 100px, (max-width: 1023px) 400px, 1000'
-                            placeholder='blur'
-                            blurDataURL={photo.url}
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex w-full h-full">
+                {photos.map((photo, photoIndex) => {
 
-                        />
-                    </div>
-                );
-            })}
+                    //using a variable to place all images at the right part 
+                    // of the container where it would be hidden
+                    let position = 'opacity-0 translate-x-full';
+                    if (photoIndex === index) {
+                        position = ' opacity-1 translate-x-0';
+                    }
+                    if (photoIndex === index - 1(index === 0 && photos.length - 1)) {
+                        position = '-translate-x-full';
+                    }
 
-        </ScrollMenu>
+                    return (
+                        <div
+                            key={photo.url}
+                            className={`${position} transition-all duration-300 absolute h-full w-full`}>
+                            <img src={photo.url} alt="property photo" className='w-full h-full' />
+                        </div>
+                    );
+
+                })}
+
+                <LeftArrow setIndex={setIndex} />
+                <RightArrow setIndex={setIndex} />
+            </div>
+        </div>
     );
 }
 
 
 //scroll to prev Image
-function LeftArrow() {
-    const { scrollPrev } = useContext(VisibilityContext);
+function LeftArrow({ setIndex }) {
 
     return (
-        <span
-            className='w-10 flex items-center justify-center cursor-pointer'
-            onClick={()=> scrollPrev()} >
+        <button
+            className='absolute flex items-center justify-center text-white transition-all duration-300 bg-gray-600 cursor-pointer hover:bg-gray-300 hover:text-black top-2/4 left-8 w-14 h-14 backdrop-opacity-0'
+            onClick={()=> setIndex(index - 1)}
+        >
             <FaArrowAltCircleLeft />
-
-        </span>
+        </button>
     );
 }
 
 
 //scroll to the next Image
-function RightArrow() {
-    const { scrollNext } = useContext(VisibilityContext);
-
+function RightArrow({ setIndex }) {
     return (
-        <span
-            className='w-10 flex items-center justify-center cursor-pointer'
-            onClick={() => scrollNext()} >
-            <FaArrowAltCircleRight />
+        <button
+            className='absolute flex items-center justify-center text-white transition-all duration-300 bg-gray-600 cursor-pointer hover:bg-gray-300 hover:text-black top-2/4 right-8 w-14 h-14 backdrop-opacity-0'
+            onClick={() => setIndex(index + 1)}
 
-        </span>
+        >
+            <FaArrowAltCircleRight />
+        </button>
     );
 }
 
