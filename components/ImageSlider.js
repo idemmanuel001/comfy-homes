@@ -16,7 +16,7 @@ export default function ImageSlider({ photos }) {
                 return (
                     <div
                         key={photo.id}
-                        className='max-w-4xl overflow-hidden'
+                        className='max-w-4xl overflow-hidden  h-65-vh'
                     >
                         <Image
                             alt='Property Photo'
