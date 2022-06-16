@@ -1,0 +1,65 @@
+import { useContext } from 'react';
+import Image from 'next/image';
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
+
+
+//property details Image Slider
+export default function ImageSlider({ photos }) {
+    return (
+        <ScrollMenu
+            LeftArrow={LeftArrow}
+            RightArrow={RightArrow} >
+            {photos.map((photo) => {
+                return (
+                    <div
+                        key={photo.id}
+                        className='max-w-4xl overflow-hidden'
+                    >
+                        <Image
+                            alt='Property Photo'
+                            src={photo.url}
+                            layout='fill'
+                            placeholder='blur'
+                            blurDataURL={photo.url}
+
+                        />
+                    </div>
+                );
+            })}
+
+        </ScrollMenu>
+    );
+}
+
+
+//scroll to prev Image
+function LeftArrow() {
+    const { scrollPrev } = useContext(VisibilityContext);
+
+    return (
+        <span
+            className='w-10 flex items-center justify-center cursor-pointer'
+            onClick={()=> scrollPrev()} >
+            <FaArrowAltCircleLeft />
+
+        </span>
+    );
+}
+
+
+//scroll to the next Image
+function RightArrow() {
+    const { scrollNext } = useContext(VisibilityContext);
+
+    return (
+        <span
+            className='w-10 flex items-center justify-center cursor-pointer'
+            onClick={() => scrollNext()} >
+            <FaArrowAltCircleRight />
+
+        </span>
+    );
+}
+
+
