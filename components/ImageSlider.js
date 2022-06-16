@@ -5,7 +5,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 
 //property details Image Slider
 export default function ImageSlider({ data }) {
-    const [photos, setPhotos] = useState(data)
+    const [photos, setPhotos] = useState(data);
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
@@ -13,8 +13,19 @@ export default function ImageSlider({ data }) {
         if (index < 0) {
             setIndex(lastIndex);
         }
+        if (index > lastIndex) {
+            setIndex(0);
+        }
 
     }, [index, photos]);
+
+    useEffect(() => {
+        const slider = setInterval(() => {
+            setIndex(index + 1);
+        }, [index]);
+
+        return () => clearInterval(slider);
+    });
 
     return (
         <div className="relative max-w-2xl mx-auto overflow-hidden h-96 mt-20s">
