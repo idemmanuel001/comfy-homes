@@ -11,7 +11,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
             <h2 className='w-full my-4 text-center '>
                 {
                     `${title} Property Details`
-                }
+                }``
             </h2>
 
             {/* Property photos */}
