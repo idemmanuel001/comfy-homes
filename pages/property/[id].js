@@ -15,11 +15,11 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
             </h2>
 
             {/* Property photos */}
-            {photos && <ImageSlider photos={photos} />}
+            {photos && <ImageSlider data={photos} />}
   
             <section className="w-10/12 px-2 py-4 mx-auto md:px-4 md:py-8 md:max-w-screen-lg">
 
-                <div className="flex w-full flex-col items-center p-2 text-gray-800 md:py-3 md:px-2 ">
+                <div className="flex flex-col items-center w-full p-2 text-gray-800 md:py-3 md:px-2 ">
 
                     <h3 className='py-1 text-lg font-semibold text-center' > {title}</h3>
                     <p className='flex items-center justify-center text-lg italic' >
