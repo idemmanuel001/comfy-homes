@@ -9,18 +9,21 @@ export default function ImageSlider({ photos }) {
     return (
         <ScrollMenu
             LeftArrow={LeftArrow}
-            RightArrow={RightArrow} >
+            RightArrow={RightArrow} 
+            style={{overflow: 'hidden'}} >
+
             {photos.map((photo) => {
                 return (
                     <div
                         key={photo.id}
-                        className='max-w-4xl overflow-hidden h-65-vh'
+                        className='max-w-4xl overflow-hidden'
                     >
                         <Image
                             alt='Property Photo'
                             src={photo.url}
-                            width={896}
+                            width={1000}
                             height={500}
+                            sizes='(max-width:500px) 100px, (max-width: 1023px) 400px, 1000'
                             placeholder='blur'
                             blurDataURL={photo.url}
 
