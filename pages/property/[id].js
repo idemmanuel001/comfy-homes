@@ -7,12 +7,8 @@ import ImageSlider  from '../../components/ImageSlider';
 
 export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography } }) {
     return (
-        <main className='w-full h-full bg-white'>
-            <h2 className='w-full my-4 text-center '>
-                {
-                    `${title} Property Details`
-                }``
-            </h2>
+        <main className='w-full h-full my-6 bg-white md:my-12'>
+           
 
             {/* Property photos */}
             {photos && <ImageSlider data={photos} />}
@@ -29,10 +25,10 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         </span>
                     </p>
 
-                    <p className="flex items-center  justify-around mt-1.5 w-4/5 text-blue-400">
-                        <span className='flex items-center justify-around' >{rooms} - <FaBed />|</span>
-                        <span className='flex items-center justify-around'>{baths} - <FaBath />|</span>
-                        <span className='flex items-center justify-around'>{millify(area)}sqft - <BsGridFill /></span>
+                    <p className="flex items-center  justify-center mt-1.5 w-4/5 text-blue-400">
+                        <span className='flex items-center justify-around mx-2' >{rooms} - <FaBed />|</span>
+                        <span className='flex items-center justify-around mx-2'>{baths} - <FaBath />|</span>
+                        <span className='flex items-center justify-around mx-2 '>{millify(area)}sqft - <BsGridFill /></span>
                     </p>
                 </div>
             </section>

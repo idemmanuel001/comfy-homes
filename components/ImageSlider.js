@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
+import { HiOutlineChevronDoubleLeft, HiOutlineChevronDoubleRight } from 'react-icons/hi';
 
 
 //property details Image Slider
@@ -22,7 +22,7 @@ export default function ImageSlider({ data }) {
     useEffect(() => {
         const slider = setInterval(() => {
             setIndex(index + 1);
-        }, 3000);
+        }, 5000);
 
         return () => clearInterval(slider);
     }, [index]);
@@ -33,7 +33,7 @@ export default function ImageSlider({ data }) {
             <div className="absolute top-0 bottom-0 left-0 right-0 flex w-full h-full">
                 {photos.map((photo, photoIndex) => {
 
-                    //using a variable to place all images at the right part 
+                    //using an array to place all images at the right part 
                     // of the container where it would be hidden
                     let position = ['opacity-0', 'translate-x-full', 'transition-all', 'duration-300', 'absolute', 'h-full', 'w-full'];
                     if (photoIndex === index) {
@@ -66,10 +66,10 @@ function LeftArrow({ setIndex, index }) {
 
     return (
         <button
-            className='absolute flex items-center justify-center text-white transition-all duration-300 bg-gray-600 cursor-pointer hover:bg-gray-300 hover:text-black top-2/4 left-8 w-14 h-14 backdrop-opacity-0'
+            className='absolute flex items-center justify-center w-8 h-8 text-white transition-all duration-300 bg-gray-800 rounded shadow cursor-pointer bg-opacity-80 hover:bg-gray-300 hover:text-black top-2/4 left-5 md:left-8'
             onClick={() => setIndex(index - 1)}
         >
-            <FaArrowAltCircleLeft />
+            <HiOutlineChevronDoubleLeft />
         </button>
     );
 }
@@ -79,11 +79,11 @@ function LeftArrow({ setIndex, index }) {
 function RightArrow({ setIndex, index }) {
     return (
         <button
-            className='absolute flex items-center justify-center text-white transition-all duration-300 bg-gray-600 cursor-pointer hover:bg-gray-300 hover:text-black top-2/4 right-8 w-14 h-14 backdrop-opacity-0'
+            className='absolute flex items-center justify-center w-8 h-8 text-white transition-all duration-300 bg-gray-800 rounded shadow cursor-pointer bg-opacity-80 hover:bg-gray-300 hover:text-black top-2/4 right-5 md:right-8'
             onClick={() => setIndex(index + 1)}
 
         >
-            <FaArrowAltCircleRight />
+            <HiOutlineChevronDoubleRight />
         </button>
     );
 }
