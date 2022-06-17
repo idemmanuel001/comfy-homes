@@ -22,10 +22,10 @@ export default function ImageSlider({ data }) {
     useEffect(() => {
         const slider = setInterval(() => {
             setIndex(index + 1);
-        }, [index]);
+        }, 3000);
 
         return () => clearInterval(slider);
-    });
+    }, [index]);
 
     return (
         <div className="relative max-w-2xl mx-auto overflow-hidden h-96 mt-20s">
@@ -39,22 +39,22 @@ export default function ImageSlider({ data }) {
                     if (photoIndex === index) {
                         position = ['opacity-1', 'translate-x-0 ', 'transition-all', 'duration-300', 'absolute', 'h-full', 'w-full'];
                     }
-                    if (photoIndex === index - 1(index === 0 && photos.length - 1)) {
+                    if (photoIndex === index - 1 || (index === 0 && photos.length - 1)) {
                         position = ['opacity-0', '-translate-x-full', 'transition-all', 'duration-300', 'absolute', 'h-full', 'w-full'];
                     }
 
                     return (
                         <div
                             key={photo.url}
-                            className={position.split(',')}>
+                            className={position.join(' ')}>
                             <img src={photo.url} alt="property photo" className='w-full h-full' />
                         </div>
                     );
 
                 })}
 
-                <LeftArrow setIndex={setIndex} />
-                <RightArrow setIndex={setIndex} />
+                <LeftArrow setIndex={setIndex} index={index} />
+                <RightArrow setIndex={setIndex} index={index} />
             </div>
         </div>
     );
@@ -62,7 +62,7 @@ export default function ImageSlider({ data }) {
 
 
 //scroll to prev Image
-function LeftArrow({ setIndex }) {
+function LeftArrow({ setIndex, index }) {
 
     return (
         <button
@@ -76,7 +76,7 @@ function LeftArrow({ setIndex }) {
 
 
 //scroll to the next Image
-function RightArrow({ setIndex }) {
+function RightArrow({ setIndex, index }) {
     return (
         <button
             className='absolute flex items-center justify-center text-white transition-all duration-300 bg-gray-600 cursor-pointer hover:bg-gray-300 hover:text-black top-2/4 right-8 w-14 h-14 backdrop-opacity-0'
