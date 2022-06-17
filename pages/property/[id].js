@@ -17,7 +17,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
 
                 <div className="flex flex-col items-center w-full p-2 text-gray-800 md:py-3 md:px-2 ">
 
-                    <h3 className='py-1 text-lg font-semibold text-center' > {title}</h3>
+                    <h3 className='py-1 text-lg font-bold text-center' > {title}</h3>
                     <p className='flex items-center justify-center text-lg italic' >
                         <span className='mx-1.5'>AED {millify(price)}{rentFrequency && `/${rentFrequency}`} </span>
                         <span className='text-green-400 mx-1.5' >
@@ -25,11 +25,23 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         </span>
                     </p>
 
-                    <p className="flex items-center  justify-center mt-1.5 w-4/5 text-blue-400">
-                        <span className='flex items-center justify-around mx-2' >{rooms} - <FaBed />|</span>
-                        <span className='flex items-center justify-around mx-2'>{baths} - <FaBath />|</span>
-                        <span className='flex items-center justify-around mx-2 '>{millify(area)}sqft - <BsGridFill /></span>
+                    <p className="flex items-center  justify-center mt-1.5 w-full md:w-4/5 text-blue-400">
+                        <span className='flex items-center justify-center mx-2' >{rooms} - <FaBed />|</span>
+                        <span className='flex items-center justify-center mx-2'>{baths} - <FaBath />|</span>
+                        <span className='flex items-center justify-center mx-2 '>{millify(area)}sqft - <BsGridFill /></span>
                     </p>
+
+                    <div>
+                        <div id="map" className="flex flex-col items-center justify-center py-4">
+                            Google Map would go here:::::::
+                            <p> Lat:{geography.lat} </p>
+                            <p> Lon:{geography.lng} </p>
+                        </div>
+
+                        <div className="flex items-center justify-center py-4 text-justify">
+                            {description}
+                        </div>
+                    </div>
                 </div>
             </section>
 
