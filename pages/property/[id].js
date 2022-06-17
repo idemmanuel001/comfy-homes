@@ -5,7 +5,7 @@ import millify from 'millify';
 import { fetchApi, baseUrl } from '../../utils/fetchApi';
 import ImageSlider  from '../../components/ImageSlider';
 
-export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography } }) {
+export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography, agency: { name, url }, phoneNumber: { mobile, phone, whatsapp } } }) {
     return (
         <main className='w-full h-full my-6 bg-white md:my-12'>
            
