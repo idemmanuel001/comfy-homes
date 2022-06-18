@@ -4,6 +4,7 @@ import { GoVerified } from 'react-icons/go';
 import millify from 'millify';
 import { fetchApi, baseUrl } from '../../utils/fetchApi';
 import ImageSlider  from '../../components/ImageSlider';
+import Map from '../../components/Map';
 
 export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography, agency: { name, url }, phoneNumber: { mobile, phone, whatsapp } } }) {
     return (
@@ -31,16 +32,12 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         <span className='flex items-center justify-center mx-2 '>{millify(area)}sqft - <BsGridFill /></span>
                     </p>
 
-                    <div>
-                        <div id="map" className="flex flex-col items-center justify-center py-4">
-                            Google Map would go here:::::::
-                            <p> Lat:{geography.lat} </p>
-                            <p> Lon:{geography.lng} </p>
+                        <div id="map" className="flex flex-col w-full items-center justify-center py-4">
+                            <Map geography={geography} />
                         </div>
-
-                        <div className="flex items-center justify-center py-4 text-justify">
-                            {description}
-                        </div>
+                    
+                    <div className="flex items-center justify-center py-4 text-justify">
+                        {description}
                     </div>
                 </div>
             </section>
