@@ -15,9 +15,9 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
   
             <section className="w-10/12 px-2 py-4 mx-auto md:px-4 md:py-8 md:max-w-screen-lg">
 
-                <div className="flex flex-col items-center w-full p-2 text-gray-800 md:py-3 md:px-2 ">
+                <div className="flex flex-col items-center w-full text-gray-800 md:py-3 md:px-2 ">
 
-                    <h3 className='py-1 text-lg font-bold text-center' > {title}</h3>
+                    <h3 className='py-1.5 text-lg font-bold text-center' > {title}</h3>
                     <p className='flex items-center justify-center text-lg italic' >
                         <span className='mx-1.5'>AED {millify(price)}{rentFrequency && `/${rentFrequency}`} </span>
                         <span className='text-green-400 mx-1.5' >

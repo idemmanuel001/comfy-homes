@@ -28,9 +28,9 @@ export default function ImageSlider({ data }) {
     }, [index]);
 
     return (
-        <div className="relative max-w-2xl mx-auto overflow-hidden h-96 mt-20s">
+        <div className="relative mx-auto overflow-hidden border-2 rounded-md shadow-lg md:max-w-screen-lg h-96 mt-20s">
 
-            <div className="absolute top-0 bottom-0 left-0 right-0 flex w-full h-full">
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex w-full h-full rounded-md ">
                 {photos.map((photo, photoIndex) => {
 
                     //using an array to place all images at the right part 
@@ -47,7 +47,14 @@ export default function ImageSlider({ data }) {
                         <div
                             key={photo.url}
                             className={position.join(' ')}>
-                            <img src={photo.url} alt="property photo" className='w-full h-full' />
+                            <Image
+                                src={photo.url}
+                                alt="property photo"
+                                blurDataURL={photo.url}
+                                layout='fill'
+                                objectFit="cover"
+                                quality={100}
+                                className='w-full h-full' />
                         </div>
                     );
 
