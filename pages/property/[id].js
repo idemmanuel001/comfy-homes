@@ -24,7 +24,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         <span className='text-green-400 mx-1.5' >
                             {isVerified && <GoVerified />}
                         </span>
-                    </p>
+                    </p> 
 
                     <p className="flex items-center  justify-center mt-1.5 w-full md:w-4/5 text-blue-400">
                         <span className='flex items-center justify-center mx-2' >{rooms} - <FaBed />|</span>
@@ -32,7 +32,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         <span className='flex items-center justify-center mx-2 '>{millify(area)}sqft - <BsGridFill /></span>
                     </p>
 
-                        <div id="map" className="flex flex-col w-full items-center justify-center py-4">
+                        <div id="map" className="flex flex-col w-full h-56 rounded items-center justify-center py-4">
                             <Map geography={geography} />
                         </div>
                     
@@ -45,7 +45,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
 
         </main>
     );
-}
+}``
 
 
 export async function getServerSideProps({ params: { id } }) {

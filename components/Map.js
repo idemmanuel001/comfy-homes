@@ -29,7 +29,7 @@ export default function Map({ geography: { lat, lng } }) {
     return (
         <div 
         ref={googlemap}
-        className='w-full h-full'
+        className='w-full h-52'
         />
 
     );
