@@ -28,9 +28,9 @@ export default function ImageSlider({ data }) {
     }, [index]);
 
     return (
-        <div className="relative  overflow-hidden md:max-w-screen-lg h-96 ">
+        <div className="relative rounded-md  overflow-hidden md:max-w-screen-lg h-72 shadow md:shadow-md md:h-96 ">
 
-            <div className="absolute top-0 bottom-0 left-0 right-0 flex w-full h-full  ">
+            <div className="absolute rounded-md top-0 bottom-0 left-0 right-0 flex w-full h-full  ">
                 {photos.map((photo, photoIndex) => {
 
                     //using an array to place all images at the right part 
