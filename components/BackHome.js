@@ -6,12 +6,12 @@ export default function BackHome() {
     <Link 
     href={'/'}
     passHref
-    className='w-full flex cursor-pointer'
+    className='w-full flex '
     >
          <div
-              className='py-2 md:py-4 text-left flex justify-start items-center w-10/12 px-2 mmd:px-0  md:max-w-screen-lg'
+              className='my-4 hover:text-blue-800 cursor-pointer md:mt-4 text-left mx-auto flex justify-start items-center w-10/12 px-2 md:px-0  md:max-w-screen-lg'
          >
-              <HiArrowLeft /> <span className='ml-1 md:ml-2'> go back Home</span>
+              <HiArrowLeft /> <span className='ml-1 md:ml-2 underline '> go back Home</span>
          </div>
     </Link>
   )

@@ -11,8 +11,9 @@ export default function propertiesForSale({ propertiesForSale }) {
         <title>Buy a home in the U.A.E</title>
       </Head> 
 
-      <BackHome />
+     
       <main className='w-full h-full bg-white md:mt-2'>
+        <BackHome />
 
         <section className="w-10/12 px-2 mx-auto md:px-0 md:py-2 md:max-w-screen-lg">
           <h2
