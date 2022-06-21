@@ -4,8 +4,8 @@ import Image from 'next/image';
 export default function Header({ propertiesForSale}) {
  
   return (
-    <header className='flex justify-center w-full bg-white shadow-md h-14 item-center'>
-      <div className="flex items-center justify-between w-full h-full px-2 md:px-4 md:max-w-screen-lg">
+    <header className='flex justify-center w-full bg-white shadow-md h-14 item-center sticky top-0 z-50 '>
+      <div className="flex items-center justify-between w-full h-full px-2 md:px-0 md:max-w-screen-lg">
         <Link href='/' passhref className='w-full h-full'>
           <Image
             src='/images/logo.svg'

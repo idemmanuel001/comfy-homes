@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { fetchApi, baseUrl } from '../utils/fetchApi';
 import Property from '../components/Property';
+import BackHome from '../components/BackHome';
 
 export default function propertiesForSale({ propertiesForSale }) {
   return (
@@ -9,11 +10,13 @@ export default function propertiesForSale({ propertiesForSale }) {
       <Head>
         <title>Buy a home in the U.A.E</title>
       </Head> 
-      <main className='w-full h-full bg-white md:mt-4'>
 
-        <section className="w-10/12 px-2 mx-auto md:px-4 md:py-2 md:max-w-screen-lg">
+      <BackHome />
+      <main className='w-full h-full bg-white md:mt-2'>
+
+        <section className="w-10/12 px-2 mx-auto md:px-0 md:py-2 md:max-w-screen-lg">
           <h2
-            className='my-8 text-3xl  font-semibold text-center text-gray-800 md:text-4xl'
+            className='my-6 text-3xl  font-semibold text-center text-gray-800 md:text-4xl'
           >Buy a Home in the U.A.E</h2>
 
           {/* Property container  */}
