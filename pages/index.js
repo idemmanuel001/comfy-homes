@@ -26,7 +26,7 @@ export default function Home({ propertiesForRent }) {
 
         {/* background overlay with content*/}
         <div className="absolute z-10 flex items-center justify-center w-full bg-black bg-opacity-50 h-65-vh md:h-85-vh">
-          <div className='z-20 flex flex-col items-center w-10/12 px-2 md:px-0 md:max-w-screen-lg' >
+          <div className='z-20 flex flex-col items-center w-10/12 md:max-w-screen-lg' >
             <h1 className='mb-2 text-4xl font-bold tracking-tight text-center text-white drop-shadow-sm md:text-6xl xl:text-7xl md:mb-5'>
               Discover Your New Home
             </h1>
@@ -41,7 +41,7 @@ export default function Home({ propertiesForRent }) {
         </div>
 
       </section>
-      <section className="w-10/12 px-2 py-4 mx-auto md:px-0 md:py-8 md:max-w-screen-lg">
+      <section className="w-10/12 py-4 mx-auto  md:py-8 md:max-w-screen-lg">
         <h2
           className='text-3xl font-semibold text-center text-gray-800 md:text-4xl'
         >Explore Rentals in the U.A.E</h2>

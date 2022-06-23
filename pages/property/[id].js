@@ -14,7 +14,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
             <BackHome />
             <h3 className='w-10/12 mx-auto mt-4 mb-2 md:mt-8 md:mb-6 text-lg text-gray-800 md:text-4xl font-bold text-center' > {title}</h3>
   
-            <section className="w-10/12 px-2 py-4  mx-auto md:px-0 md:py-8 md:max-w-screen-lg">
+            <section className="w-10/12 py-4  mx-auto md:py-8 md:max-w-screen-lg">
                 {/* Property photos */}
                 {photos && <ImageSlider data={photos} />}
 
