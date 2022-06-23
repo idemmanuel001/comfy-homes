@@ -6,7 +6,7 @@ export default function Search() {
           <input
               type="text"
               name="search"
-              placeholder='Search by cities in the UAE eg Dubai'
+              placeholder='Search by cities in the UAE e.g dubai'
               id="search"
               className='block w-full px-3 py-1 m-0 text-base font-normal transition ease-in-out bg-white border border-gray-400 border-solid rounded outline-none form-control first-line:text-gray-700 bg-clip-padding drop-shadow-md hover:drop-shadow-xl focus:text-gray-700 md:h-12 focus:bg-white focus:border-blue-600 focus:outline-none placeholder:text-gray-200' />
 

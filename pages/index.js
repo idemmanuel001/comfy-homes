@@ -61,7 +61,7 @@ export default function Home({ propertiesForRent }) {
 
 export async function getStaticProps() {
 
-  const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=27`);
+  const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=24`);
  
   return {
     props: {
