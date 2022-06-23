@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FaBath, FaBed } from 'react-icons/fa';
-import { BsGridFill } from 'react-icons/bs';
+import { BsGridFill, BsWhatsapp, BsFillTelephoneFill, BsTelephoneFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import millify from 'millify';
 import { fetchApi, baseUrl } from '../../utils/fetchApi';
@@ -8,7 +8,7 @@ import ImageSlider from '../../components/ImageSlider';
 import Map from '../../components/Map';
 import BackHome from '../../components/BackHome';
 
-export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography, location, agency: { name, url }, phoneNumber: { mobile, phone, whatsapp } } }) {
+export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography, location, phoneNumber: { phone, whatsapp } } }) {
     return (
         <main className='w-full h-full mb-6 bg-white md:my-12'>
 
@@ -32,7 +32,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                             </p>
 
                             <p className='flex justify-center items-center'>
-                                <span className='text-green-400 mr-1 md:mr-2' >
+                                <span className='text-green-600 mr-1 md:mr-2' >
                                     {isVerified && <GoVerified />}
                                 </span>
                                 <span>AED {millify(price)}{rentFrequency && `/${rentFrequency}`} </span>
@@ -54,10 +54,18 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                             src={agency.logo.url}
                             width='50'
                             height='50'
+
                             />
                         </div>
                         <p>{agency.name} </p>
-                        <p></p>
+                        <div>
+                        {phone && <p className='flex justify-center items-start'>
+                                    <BsTelephoneFill style={{ color: 'rgb(22 163 74)' }} /> {phone}
+                                 </p>}
+                                {whatsapp && <p className='flex justify-center items-start'>
+                                    <BsWhatsapp style={{ color: 'rgb(22 163 74)'}} /> {whatsapp}
+                                 </p>}
+                        </div>
 
                        </div>
 
