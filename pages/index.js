@@ -25,13 +25,13 @@ export default function Home({ propertiesForRent }) {
         </div>
 
         {/* background overlay with content*/}
-        <div className="absolute z-10 flex items-center justify-center w-full bg-black bg-opacity-50 h-65-vh md:h-85-vh">
+        <div className="absolute z-10 flex items-center justify-center w-full bg-black bg-opacity-60 h-65-vh md:h-85-vh">
           <div className='z-20 flex flex-col items-center w-10/12 md:max-w-screen-lg' >
             <h1 className='mb-2 text-4xl font-bold tracking-tight text-center text-white drop-shadow-sm md:text-6xl xl:text-7xl md:mb-5'>
               Discover Your New Home
             </h1>
             <p
-              className="text-xl text-center text-white drop-shadow-sm md:text-2xl xl:text-5xl"
+              className="text-xl text-center text-white drop-shadow-sm md:text-2xl xl:text-4xl"
             >Let’s find a home that’s perfect for you in the U.A.E</p>
 
           {/* Search Component */}
