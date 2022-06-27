@@ -34,13 +34,13 @@ export default function ImageSlider({ data }) {
                 {photos.map((photo, photoIndex) => {
 
                     //using an array to place all images at the right part 
-                    // of the container where it would be hidden
-                    let position = ['opacity-0', 'translate-x-full', 'transition-all', 'duration-300', 'absolute', 'h-full', 'w-full'];
+                    // of the container where it would either be visible or hidden
+                    let position = ['transition-all', 'duration-300', 'absolute', 'h-full', 'w-full', 'opacity-0', 'translate-x-full',];
                     if (photoIndex === index) {
-                        position = ['opacity-1', 'translate-x-0 ', 'transition-all', 'duration-300', 'absolute', 'h-full', 'w-full'];
+                        position.splice(5, 2, 'opacity-1', 'translate-x-0 ');
                     }
                     if (photoIndex === index - 1 || (index === 0 && photos.length - 1)) {
-                        position = ['opacity-0', '-translate-x-full', 'transition-all', 'duration-300', 'absolute', 'h-full', 'w-full'];
+                        position.splice(5, 2, 'opacity-0', '-translate-x-full');
                     }
 
                     return (
