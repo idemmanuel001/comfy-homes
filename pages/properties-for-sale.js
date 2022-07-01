@@ -21,16 +21,14 @@ export default function propertiesForSale({ propertiesForSale }) {
           >Buy a Home in the U.A.E</h2>
 
           {/* Property container  */}
-<<<<<<< HEAD
           <div className="grid grid-rows-1 gap-8 my-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:flex-row md:my-8">
-=======
-          <div className="grid grid-rows-1 gap-8 my-6 overflow-hidden md:grid-cols-3 md:gap-10 md:flex-row md:my-8">
->>>>>>> 0880686353ad23ecaa1c2d92dceec045d03ef78d
             {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
           </div>
         </section>
       </main>
+ 
 
+ 
     </>
   );
 }
