@@ -26,7 +26,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
 
 
                         {/* Price, Verification Status, and Basic Amenities */}
-                        <div className="flex flex-col items-start justify center pt-3 pb-2 md:pt-0 md:pb-0 font-bold ">
+                        <div className="flex flex-col  items-start justify center mt-3 mb-2 md:mt-0 md:mb-0 font-bold">
                             <p className='flex justify-center items-center text-center' >
                                 <span className='w-3.5 h-3.5 md:w-4 md:h-4  rounded bg-blue-600 mr-1 md:mr-2' ></span>  {rentFrequency ? 'For Rent' : 'For Sale'}
                             </p>
@@ -46,26 +46,26 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         </div>
 
                         {/* Agent Details */}
-                        <div className="flex flex-col items-start justify-center font-bold  ">
-                            <p className="text-left mb-2 text-lg">Agency Details</p>
+                        <div className="flex flex-col my-2 md:my-0 items-start justify-center font-bold  ">
+                            <p className="text-left mb-2 text-base">Agency Information</p>
                             <div className="flex items-center justify-center">
                                 <div className='flex justify-center items-center rounded-full shadow shadow-gray-400'>
                                     <Image
                                         alt='agency logo'
                                         src={agency.logo.url}
-                                        width='40'
-                                        height='40'
+                                        width='30'
+                                        height='30'
                                     />
                                 </div>
                                 <p className='ml-2 text-base'>{agency.name} </p>
                             </div>
 
                             <div className='text-base'>
-                                {phone && <p className='flex justify-center items-start my-2'>
-                                    <BsTelephoneFill style={{ color: 'rgb(22 163 74)', marginRight: '15px', width: '30px', height: '30px' }} /> {phone}
+                                {phone && <p className='flex justify-center items-start my-1.5'>
+                                    <BsTelephoneFill style={{ color: 'rgb(22 163 74)', marginRight: '0.5rem', width: '1.5rem', height: '1.5rem' }} /> {phone}
                                 </p>}
-                                {whatsapp && <p className='flex justify-center items-start my-2'>
-                                    <BsWhatsapp style={{ color: 'rgb(22 163 74)', marginRight: '15px', width: '30px', height: '30px' }} /> {whatsapp}
+                                {whatsapp && <p className='flex justify-center items-start my-1.5'>
+                                    <BsWhatsapp style={{ color: 'rgb(22 163 74)', marginRight: '0.5rem', width: '1.5rem', height: '1.5rem' }} /> {whatsapp}
                                 </p>}
                             </div>
 
