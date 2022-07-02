@@ -88,7 +88,6 @@ function RightArrow({ setIndex, index }) {
         <button
             className='absolute flex items-center justify-center w-8 h-8 text-white transition-all duration-300 bg-gray-800 rounded shadow cursor-pointer bg-opacity-80 hover:bg-gray-300 hover:text-black top-2/4 right-5 md:right-8'
             onClick={() => setIndex(index + 1)}
-
         >
             <HiOutlineChevronDoubleRight />
         </button>

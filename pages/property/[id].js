@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FaBath, FaBed } from 'react-icons/fa';
-import { BsGridFill, BsWhatsapp, BsFillTelephoneFill, BsTelephoneFill } from 'react-icons/bs';
+import { BsGridFill, BsWhatsapp, BsTelephoneFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import millify from 'millify';
 import { fetchApi, baseUrl } from '../../utils/fetchApi';
@@ -8,7 +8,7 @@ import ImageSlider from '../../components/ImageSlider';
 import Map from '../../components/Map';
 import BackHome from '../../components/BackHome';
 
-export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, purpose, amenities, furnishingStatus, photos, geography, location, phoneNumber: { phone, whatsapp } } }) {
+export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, amenities, furnishingStatus, photos, geography, phoneNumber: { phone, whatsapp } } }) {
     return (
         <main className='w-full h-full mb-6 bg-white md:my-12'>
 
@@ -30,8 +30,13 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                             <p className='flex justify-center items-center text-center' >
                                 <span className='w-3.5 h-3.5 md:w-4 md:h-4  rounded bg-blue-600 mr-1 md:mr-2' ></span>  {rentFrequency ? 'For Rent' : 'For Sale'}
                             </p>
+                            <p className='flex justify-center items-center text-center capitalize' >
+                                <span className='w-3.5 h-3.5 md:w-4 md:h-4  rounded bg-blue-600 mr-1 md:mr-2 ' ></span> <span className="mr-1">  {furnishingStatus} </span> 
+                                <span> {type} </span>
+                            </p>
+                            
 
-                            <p className='flex justify-center items-center'>
+                            <p className='flex justify-center items-center capitalize'>
                                 <span className='text-green-600 mr-1 md:mr-2' >
                                     {isVerified && <GoVerified />}
                                 </span>
@@ -47,7 +52,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
 
                         {/* Agent Details */}
                         <div className="flex flex-col my-2 md:my-0 items-start justify-center font-bold  ">
-                            <p className="text-left mb-2 text-base">Agency Information</p>
+                            <p className="text-left mb-2 ">Agency Information</p>
                             <div className="flex items-center justify-center">
                                 <div className='flex justify-center items-center rounded-full shadow shadow-gray-400'>
                                     <Image
@@ -64,7 +69,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                                 {phone && <p className='flex justify-center items-start my-1.5'>
                                     <BsTelephoneFill style={{ color: 'rgb(22 163 74)', marginRight: '0.5rem', width: '1.5rem', height: '1.5rem' }} /> {phone}
                                 </p>}
-                                {whatsapp && <p className='flex justify-center items-start my-1.5'>
+                                {whatsapp && <p className='flex justify-center items-start mt-1.5'>
                                     <BsWhatsapp style={{ color: 'rgb(22 163 74)', marginRight: '0.5rem', width: '1.5rem', height: '1.5rem' }} /> {whatsapp}
                                 </p>}
                             </div>
@@ -77,13 +82,24 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                         <Map geography={geography} />
                     </div>
 
-
-
-
-
-                    <div className="flex items-center justify-center text-justify">
+                    <div className="flex items-center justify-center my-4 text-justify">
                         {description}
                     </div>
+
+                   <div>
+                        {amenities?.map((item) => {
+                            item?.amenities?.map(amenity => {
+                                return (
+                                    <div
+                                        key={amenity.text}
+                                        className="bg-blue-800 rounded-sm p-2 m-2">
+                                        <span>{amenity.text}</span>
+                                        {console.log(amenity.text)}
+                                    </div>
+                                );
+                            });
+                        })}
+                   </div>
                 </div>
             </section>
 
