@@ -24,6 +24,10 @@ body {
   width: 100%;
 }
 
+#footer-art span img {
+  opacity: 0.9 !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
