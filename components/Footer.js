@@ -39,7 +39,7 @@ export default function Footer() {
               &copy; 2022 Comfy-homes Group, Inc.
             </p>
             <p className="font-semibold  ">
-              Developed by <span className="text-blue-800 cursor-pointer"> Idoko Emmanuel</span>
+              Developed by <a href='#' className="text-blue-800 cursor-pointer underline"> Idoko Emmanuel</a>
             </p>
           </div>
 
