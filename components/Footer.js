@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="flex flex-col-reverse  px-2 md:flex-row mx-auto md:items-start md:justify-between md:max-w-screen-lg">
         
         {/* Quick Links */}
-        <div className="flex flex-col items-start mt-4 md:mt-0 mb-20">
+        <div className="flex flex-col items-start md:mb-32">
           <div className="flex flex-col">
-            <h3 className="text-left text-xl font-bold py-1.5  mb-4 border-b-4 border-blue-800 ">
+            <h3 className="text-left text-xl font-bold py-1.5  mb-4 border-b-4 border-blue-800">
               Quick Links
             </h3>
             <ul className="flex flex-col mb-2 ">
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
 
-          <div className="flex flex-col items-start justify-center">
+          <div className="flex flex-col items-start justify-center mt-8">
             <Image
               src='/images/logo.svg'
               alt='logo'
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
 
-        <div className="flex flex-col items-start  md:h-full mt-4 md:mt-0 mb-20">
+        <div className="flex flex-col items-start  md:h-full mb-8">
           <h3 className="text-left max-w-fit text-xl font-bold py-1.5  mb-4 border-b-4 border-blue-800 ">
             Properties
           </h3>
