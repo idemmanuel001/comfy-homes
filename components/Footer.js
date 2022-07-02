@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       {/* footer Art */}
-      <div id='footer-art' className="w-full h-6">
+      <div id='footer-art' className="w-full h-6 mt-10">
         <Image
           src={footerArt}
           alt='footer art'
