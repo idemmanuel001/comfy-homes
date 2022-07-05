@@ -8,7 +8,20 @@ import SearchBar from '../components/SearchBar';
 
 
 
+
 export default function Home({ propertiesForRent }) {
+
+
+  //SearchOPtions
+  const searchOptions = [
+    { value: 'abu dhabi', label: 'Abu Dhabi'},
+    { value: 'dubai', label: 'Dubai'},
+    { value: 'sharjah', label: 'Sharjah'},
+    { value: 'ajman', label: 'Ajman'},
+    { value: 'ras al khaimah', label: 'Ras Al Khaimah'},
+    { value: 'fujairah', label: 'Fujairah'},
+    { value: 'umm al-quwain', label: 'Umm al-Quwain'}
+  ]
 
   return (
    <>
@@ -35,21 +48,22 @@ export default function Home({ propertiesForRent }) {
             >Let’s find a home that’s perfect for you in the U.A.E</p>
 
           {/* Search Component */}
-            <SearchBar />
+            <SearchBar searchOptions={searchOptions} />
 
           </div>
         </div>
 
       </section>
-      <section className="w-10/12 py-4 mx-auto  md:py-8 md:max-w-screen-lg">
+      <section className="w-10/12 py-4 mx-auto md:py-8 md:max-w-screen-lg">
         <h2
           className='text-3xl font-semibold text-center text-gray-800 md:text-4xl'
         >Explore Rentals in the U.A.E</h2>
 
         {/* Property container  */}
-          <div className="grid grid-rows-1 gap-8  my-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:flex-row md:my-8">
-            {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
-        </div>
+            <div className="grid grid-rows-1 gap-8 my-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:flex-row md:my-8">
+              {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
+            </div>
+         
       </section>
 
     
