@@ -48,7 +48,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                                 <span>AED {millify(price)}{rentFrequency && `/${rentFrequency}`} </span>
                             </p>
 
-                            <p className="flex items-center  justify-center text-blue-600">
+                            <p className="flex items-center  justify-center ">
                                 <span className='flex items-center justify-center' >{rooms}- <FaBed /></span>
                                 <span className='flex items-center justify-center mx-4'>{baths}- <FaBath /></span>
                                 <span className='flex items-center justify-center'>{millify(area)}sqft- <BsGridFill /></span>
