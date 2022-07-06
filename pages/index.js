@@ -11,18 +11,6 @@ import SearchBar from '../components/SearchBar';
 
 export default function Home({ propertiesForRent }) {
 
-
-  //SearchOPtions
-  const searchOptions = [
-    { value: 'abu dhabi', label: 'Abu Dhabi'},
-    { value: 'dubai', label: 'Dubai'},
-    { value: 'sharjah', label: 'Sharjah'},
-    { value: 'ajman', label: 'Ajman'},
-    { value: 'ras al khaimah', label: 'Ras Al Khaimah'},
-    { value: 'fujairah', label: 'Fujairah'},
-    { value: 'umm al-quwain', label: 'Umm al-Quwain'}
-  ]
-
   return (
    <>
    <Head>
@@ -48,7 +36,7 @@ export default function Home({ propertiesForRent }) {
             >Let’s find a home that’s perfect for you in the U.A.E</p>
 
           {/* Search Component */}
-            <SearchBar searchOptions={searchOptions} />
+            <SearchBar />
 
           </div>
         </div>
