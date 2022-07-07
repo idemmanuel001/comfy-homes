@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="flex flex-col items-start md:mb-32">
           <div className="flex flex-col">
-            <h3 className="text-left text-xl font-bold py-1 md:py-1.5  mb-4 border-b-4 border-blue-800">
+            <h3 className="text-left text-xl font-bold py-1 md:py-1.5 mb-2  md:mb-4 border-b-4 border-blue-800">
               Quick Links
             </h3>
             <ul className="flex flex-col mb-2 ">
@@ -65,8 +65,8 @@ export default function Footer() {
         </div>
 
 
-        <div className="flex flex-col items-start  md:h-full mb-8">
-          <h3 className="text-left max-w-fit text-xl font-bold  py-1 md:py-1.5  mb-4 border-b-4 border-blue-800 ">
+        <div className="flex flex-col items-start  md:h-full mb-6 md:mb-8">
+          <h3 className="text-left max-w-fit text-xl font-bold  py-1 md:py-1.5 mb-2  md:mb-4 border-b-4 border-blue-800 ">
             Properties
           </h3>
           <ul className="flex flex-col mb-2 ">
