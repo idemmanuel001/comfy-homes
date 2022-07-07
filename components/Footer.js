@@ -7,11 +7,11 @@ export default function Footer() {
     <footer className='relative bottom-0 w-full pt-8 mt-12 bg-gray-100 border-t border-gray-500 h-max md:mt-24 '>
       {/* Container */}
       <div className="flex flex-col-reverse  px-2 md:flex-row mx-auto md:items-start md:justify-between md:max-w-screen-lg">
-        
+
         {/* Quick Links */}
         <div className="flex flex-col items-start md:mb-32">
           <div className="flex flex-col">
-            <h3 className="text-left text-xl font-bold py-1.5  mb-4 border-b-4 border-blue-800">
+            <h3 className="text-left text-xl font-bold py-1 md:py-1.5  mb-4 border-b-4 border-blue-800">
               Quick Links
             </h3>
             <ul className="flex flex-col mb-2 ">
@@ -66,7 +66,7 @@ export default function Footer() {
 
 
         <div className="flex flex-col items-start  md:h-full mb-8">
-          <h3 className="text-left max-w-fit text-xl font-bold py-1.5  mb-4 border-b-4 border-blue-800 ">
+          <h3 className="text-left max-w-fit text-xl font-bold  py-1 md:py-1.5  mb-4 border-b-4 border-blue-800 ">
             Properties
           </h3>
           <ul className="flex flex-col mb-2 ">
@@ -81,7 +81,7 @@ export default function Footer() {
           </ul>
         </div>
 
-       
+
 
       </div>
 

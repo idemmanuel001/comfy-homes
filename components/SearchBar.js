@@ -64,7 +64,7 @@ export default function Search({ getexternalID }) {
                 options={locationOptions}
                 selectOption={selectedLocation}
                 onChange={setSelectedLocation}
-                placeholder={'Select an Emirate'}
+                placeholder={'Search'}
                 className='block w-full h-full px-3 py-1 m-0 text-base font-normal transition ease-in-out bg-white border border-gray-400 border-solid rounded outline-none form-control first-line:text-gray-700 bg-clip-padding drop-shadow-md hover:drop-shadow-xl focus:text-gray-700 md:h-12 focus:bg-white focus:border-blue-600 focus:outline-none placeholder:text-gray-200'
             />
 

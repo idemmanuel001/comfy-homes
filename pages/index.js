@@ -4,7 +4,7 @@ import Property from '../components/Property';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import HeroBgSlider from '../components/HeroBgSlider';
 import SearchBar from '../components/SearchBar';
-import { BsChevronDoubleDown } from 'react-icons/bs'
+import { BsFillCaretDownFill } from 'react-icons/bs'
 
 
 
@@ -12,6 +12,7 @@ import { BsChevronDoubleDown } from 'react-icons/bs'
 
 export default function Home({ propertiesForRent }) {
   const [locationExternalID, setLocationExternalID] = useState(0)
+  const [viewMoreInDubai, setViewMoreInDubai] = useState(false)
 
   //recieving and storing the externalID from the searchBar component
   const getexternalID = (externalID)=>{
@@ -46,8 +47,8 @@ export default function Home({ propertiesForRent }) {
           {/* Search Component */}
             <SearchBar getexternalID={getexternalID}/>
 
-              <div className="flex items-center justify-center w-12 h-8 text-white bg-black bg-opacity-50 text-xl font-extrabold absolute bottom-12 left-auto right-auto">
-              <BsChevronDoubleDown />
+              <div className="flex items-center justify-center w-16 h-14 p-4 text-white  text-xl font-extrabold rounded absolute bottom-12 left-auto right-auto">
+                <BsFillCaretDownFill style={{width: '3rem', height: '2rem'}} />
             </div>
           </div>
         </div>
@@ -58,11 +59,19 @@ export default function Home({ propertiesForRent }) {
           className='text-3xl font-semibold text-center text-gray-800 md:text-4xl'
         >Explore Rentals in Dubai</h2>
 
-        {/* Property container  */}
+        {/* Properties for rent in dubai container  */}
             <div className="grid grid-rows-1 gap-8 my-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:flex-row md:my-8">
-              {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
+            {viewMoreInDubai ? 
+            propertiesForRent.map((property) => <Property property={property} key={property.id} />) :
+            propertiesForRent.slice(0, 3).map((property) => <Property property={property} key={property.id} />) 
+          }
             </div>
          
+          <button
+          onClick={() => setViewMoreInDubai(!viewMoreInDubai)} 
+          className='text-white p-2 col-start-3 rounded-md transition duration-300 ease-in-out  shadow cursor-pointer md:shadow-md text-lg md:text-base bg-gradient-to-r from-blue-800 to-blue-400 hover:text-black hover:from-blue-400 hover:to-blue-800' >
+            {viewMoreInDubai ? 'View less rentals in Dubai' : 'View more rentals in Dubai'}
+         </button>
       </section>
 
     
