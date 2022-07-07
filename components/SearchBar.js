@@ -17,7 +17,7 @@ const locationOptions = [
     { value: 'umm al-quwain', label: 'Umm al-Quwain' }
 ];
 
-export default function Search() {
+export default function Search({ getexternalID }) {
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [locationExternalID, setLocationExternalID] = useState(0);
     const router = useRouter();
@@ -27,7 +27,7 @@ export default function Search() {
         const path = router.pathname;
         const { query } = router;
 
-        //if an option have been selected set the query object to that particular option
+        //if an option have been selected then set the query object from nextjs router to that particular option
         if (selectedLocation.value && selectedLocation.label?.[selectedLocation.label]) {
             query[item.label] = item.value;
         }
@@ -41,15 +41,20 @@ export default function Search() {
         //query the API using the value of the selected Option from the location searchbar
         if (selectedLocation?.value) {
             const fetchData = async () => {
+                //fetching the selected location data
                 const locationData = await fetchApi(`${baseUrl}/auto-complete?query=${selectedLocation.value}`);
-                const externalID = locationData?.hits[0].externalID
-                setLocationExternalID(externalID)
-                console.log(locationExternalID);
+
+                //getting the externalID (a required parameter to get the location's properties) from the returnedvalue
+                const externalID = locationData?.hits[0].externalID;
+                setLocationExternalID(externalID);
+
+                //Passing the location externalID to a function from the Index page (the parent Component)
+                getexternalID(externalID);
             };
 
             fetchData();
         }
-    }, [selectedLocation]);
+    }, [selectedLocation, locationExternalID, getexternalID]);
 
 
 

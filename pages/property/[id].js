@@ -90,7 +90,9 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
                     <div className="flex flex-col my-4 md:my-5">
                         <h3 className="text-left font-bold text-lg mb-2 border-b-2 border-blue-800 w-fit">Property Description</h3>
                         <p className=" text-justify">
+                            
                             {readMore ? description : `${description.substring(0, 220)}...` }
+
                             <button 
                             onClick={() => setReadMore(!readMore)}
                             className=' text-center bg-white text-blue-800 ml-2'>
