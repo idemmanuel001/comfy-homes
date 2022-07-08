@@ -12,6 +12,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -27,11 +28,20 @@ a {
   position: relative;
 }
 
-#img-clip-path{
-  clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 100%);
+
+
+@media (min-width: 	768px) {
+  #img-clip-path {
+    clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0 100%);
+}
+  /* #img-cli-path {
+   
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  } */
 }
 
-#map{
+
+#map {
   height: 100%;
   width: 100%;
 }
@@ -39,4 +49,3 @@ a {
 #footer-art span img {
   opacity: 0.9 !important;
 }
-

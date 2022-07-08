@@ -23,7 +23,7 @@ export default function HeroBgSlider() {
             setCount(count + 1);
             setImageIndex(count);
             //console.clear();
-        }, 8000);
+        }, 5000);
         return () => {
             clearInterval(slider);
         };

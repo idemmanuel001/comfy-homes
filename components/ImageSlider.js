@@ -53,7 +53,7 @@ export default function ImageSlider({ data }) {
                                 blurDataURL={photo.url}
                                 layout='fill'
                                 objectFit="cover"
-                                quality={100}
+                                quality={70}
                                 className='w-full h-full' />
                         </div>
                     );
