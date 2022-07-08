@@ -20,24 +20,8 @@ const locationOptions = [
 export default function Search({ getLocationProperties }) {
     const [selectedOption] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
-    const router = useRouter();
-
-
-  /*   const searchLocations = () => {
-        const path = router.pathname;
-        const { query } = router;
-
-        //if an option have been selected then set the query object from nextjs router to that particular option
-        if (selectedLocation.value && selectedLocation.label?.[selectedLocation.label]) {
-            query[item.label] = item.value;
-        }
-
-        router.push({ pathname: path, query: query });
-
-    }; */
 
     useEffect(() => {
-
         //Query the API using the value of the selected Option from the location searchbar
         if (selectedLocation?.value) {
             const fetchData = async () => {

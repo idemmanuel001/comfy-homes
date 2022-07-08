@@ -8,7 +8,7 @@ import Head from 'next/head';
 function MyApp({ Component, pageProps }) {
 
   //setting up the progree bar for page loading
-  NProgress.configure({ showSpinner: false });
+  NProgress.configure({ showSpinner: true });
 
   Router.events.on('routeChangeStart', () => {
     NProgress.start();
