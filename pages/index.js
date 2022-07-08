@@ -98,7 +98,7 @@ export default function Home({ propertiesForRent }) {
           {/* Banner */}
           <div className="flex md:flex-row-reverse w-full h-52 my-10 overflow-hidden">
             <div id='img-clip-path' className='w-4/5 h-full' >
-              <img
+              <image
                 src='/images/meeting.jpg'
                 alt='meeting'
                 className='w-full h-full'
@@ -106,10 +106,10 @@ export default function Home({ propertiesForRent }) {
             </div>
             <div classNmae='flex justify-center items-center '>
               <h3 className='font-bold' >
-                Let's find the right selling option for you
+                Let&#39;s find the right selling option for you
               </h3>
               <p>
-                Get your home's value and see selling options
+                Get your home&#39;s value and see selling options
               </p>
             </div>
           </div>
