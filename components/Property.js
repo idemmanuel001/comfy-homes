@@ -12,9 +12,9 @@ export default function Property({ property: { coverPhoto, price, rentFrequency,
         <Link 
         href={`/property/${externalID}`} 
         passHref 
-            className='block mx-auto my-4 overflow-hidden'
+            className='block mx-auto my-2 overflow-hidden'
         >
-            <div className="flex flex-col   mx-auto items-center overflow-hidden transition-all bg-gray-100 rounded-md shadow-md cursor-pointer w-fit md:my-4 hover:shadow-lg group ">
+            <div className="flex flex-col   mx-auto items-center overflow-hidden transition-all bg-gray-100 rounded-md shadow-md cursor-pointer w-fit my-2 hover:shadow-lg hover:border-2 border-blue-400 group  ">
 
                 <Image
                     src={coverPhoto ? coverPhoto.url : defaultImage}
