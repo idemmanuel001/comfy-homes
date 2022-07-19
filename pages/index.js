@@ -100,7 +100,7 @@ export default function Home({ propertiesForRent }) {
 
 
           {/* Small Banner */}
-          <div className="flex flex-col justify-between w-full my-10 overflow-hidden bg-gray-100 rounded-md md:flex-row-reverse md:h-52">
+          <div className="flex flex-col justify-between w-full mt-10 mb-8 overflow-hidden bg-gray-100 rounded-md shadow-md md:flex-row-reverse md:h-52">
             <div id='img-clip-path' className='flex h-52 md:justify-end md:w-1/2 md:h-full md:justify-self-end ' >
               <Image
                 src='/images/meeting.jpg'
@@ -145,7 +145,7 @@ export default function Home({ propertiesForRent }) {
               >Available Properties in {locationProperties[0].location[1].name}</h2>
 
               {/* Properties for rent in the selcted location's container  */}
-              <div className="grid grid-rows-1 gap-6 my-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3 md:flex-row ">
+              <div className="grid grid-rows-1 gap-6 my-6 overflow-hidden md:mt-8 md:mb-10 md:grid-cols-2 lg:grid-cols-3 md:flex-row ">
                 {viewMoreInSelectedLocation ?
                   locationProperties.map((property) => <Property property={property} key={property.id} />) :
                   locationProperties.slice(0, 3).map((property) => <Property property={property} key={property.id} />)}
@@ -169,7 +169,8 @@ export default function Home({ propertiesForRent }) {
           )}
         </section>
 
-        <div className="relative w-screen h-65-vh md:h-85-vh">
+        {/* Large barner */}
+        <div className="relative w-screen shadow-md h-65-vh md:h-85-vh">
 
                 {/* Background Image */}
                 <Image
