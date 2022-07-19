@@ -198,6 +198,7 @@ export default function Home({ propertiesForRent }) {
                   </a>
                 </div>
           </div>
+
         </div>
       </main>
 
