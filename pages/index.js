@@ -18,6 +18,7 @@ export default function Home({ propertiesForRent }) {
   const [viewMoreInDubai, setViewMoreInDubai] = useState(false);
 
 
+
   //recieving and storing the selected location's list of properties from the searchBar component
   //Here I am using useCallback hook to memoize the recieved data
   const getLocationProperties = useCallback((data) => {
@@ -28,6 +29,7 @@ export default function Home({ propertiesForRent }) {
 
   //Targeting the location to scroll to when the user selects a location
   const locationRef = useRef(null);
+  
 
   useEffect(() => {
     if (locationProperties.length > 0) {
@@ -35,7 +37,8 @@ export default function Home({ propertiesForRent }) {
         behavior: "smooth",
       });
     }
-  }, [locationProperties]);
+  }, [locationProperties]); 
+
 
   return (
     <>
@@ -96,7 +99,7 @@ export default function Home({ propertiesForRent }) {
           </button>
 
 
-          {/* Banner */}
+          {/* Small Banner */}
           <div className="flex flex-col justify-between w-full my-10 overflow-hidden bg-gray-100 rounded-md md:flex-row-reverse md:h-52">
             <div id='img-clip-path' className='flex h-52 md:justify-end md:w-1/2 md:h-full md:justify-self-end ' >
               <Image

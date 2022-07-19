@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 
-
 //SearchOPtions for the various Emirates in U.A.E
 const locationOptions = [
     { value: 'abu dhabi', label: 'Abu Dhabi' },
@@ -20,11 +19,14 @@ const locationOptions = [
 export default function Search({ getLocationProperties }) {
     const [selectedOption] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         //Query the API using the value of the selected Option from the location searchbar
         if (selectedLocation?.value) {
             const fetchData = async () => {
+                //setting up the progree bar for page loading
+
                 //fetching the selected location data
                 const locationData = await fetchApi(`${baseUrl}/auto-complete?query=${selectedLocation.value}`);
 
@@ -35,11 +37,13 @@ export default function Search({ getLocationProperties }) {
                 const response = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=${externalID}&purpose=for-rent&hitsPerPage=21`);
                 const data = response?.hits;
 
-                //Passing the recieved data to the function from the index page
+                //Passing the recieved data and loading state to the function from the index page
                 getLocationProperties(data);
 
             };
             fetchData();
+
+
         }
     }, [selectedLocation?.value, getLocationProperties]);
 
@@ -56,7 +60,7 @@ export default function Search({ getLocationProperties }) {
             />
 
             <button
-                onClick={ (selectedOption) => setSelectedLocation(selectedOption)}
+                onClick={(selectedOption) => setSelectedLocation(selectedOption)}
                 type="submit"
                 className="block w-20 h-full px-3 py-1 ml-1 font-bold text-white transition duration-300 ease-in-out border border-blue-800 border-solid rounded outline-none md:w-32 md:text-xl drop-shadow-md hover:drop-shadow-xl bg-gradient-to-r from-blue-400 to-blue-800 hover:text-black hover:from-blue-800 hover:to-blue-400 focus:opacity-90 focus:outline-none"
             >Search</button>

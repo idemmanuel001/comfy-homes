@@ -4,9 +4,9 @@ import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaPinterestSquare
 
 export default function Footer() {
   return (
-    <footer className='relative bottom-0 w-full pt-8 mt-12 bg-gray-100 border-t border-gray-500 h-max md:mt-24 '>
+    <footer className='relative bottom-0 w-full pt-8 mt-12 text-gray-800 bg-gray-100 border-t border-gray-500 h-max md:mt-24 '>
       {/* Container */}
-      <div className="flex flex-col-reverse  px-2 md:flex-row mx-auto md:items-start md:justify-between md:max-w-screen-lg">
+      <div className="flex flex-col-reverse px-2 mx-auto md:flex-row md:items-start md:justify-between md:max-w-screen-lg">
 
         {/* Quick Links */}
         <div className="flex flex-col items-start md:mb-32">
@@ -38,26 +38,26 @@ export default function Footer() {
             <p className="flex font-semibold ">
               &copy; 2022 Comfy-homes Group, Inc.
             </p>
-            <p className="font-semibold  ">
-              Developed by <a href='#' className="text-blue-800 cursor-pointer underline"> Idoko Emmanuel</a>
+            <p className="font-semibold ">
+              Developed by <a href='#' className="text-blue-800 underline cursor-pointer"> Idoko Emmanuel</a>
             </p>
           </div>
 
           <div className="flex items-center justify-center my-2 ">
             <FaFacebookSquare
-              className='w-6 h-6 cursor-pointer md:w-8 md:h-8'
+              className='w-6 h-6 cursor-pointer md:w-8 md:h-8 hover:text-black '
             />
             <FaInstagramSquare
-              className='w-6 h-6 mx-1 cursor-pointer md:w-8 md:h-8'
+              className='w-6 h-6 mx-1 cursor-pointer md:w-8 md:h-8 hover:text-black '
             />
             <FaTwitterSquare
-              className='w-6 h-6 mx-1 cursor-pointer md:w-8 md:h-8'
+              className='w-6 h-6 mx-1 cursor-pointer md:w-8 md:h-8 hover:text-black'
             />
             <FaPinterestSquare
-              className='w-6 h-6 mx-1 cursor-pointer md:w-8 md:h-8'
+              className='w-6 h-6 mx-1 cursor-pointer md:w-8 md:h-8 hover:text-black'
             />
             <FaYoutubeSquare
-              className='w-6 h-6 cursor-pointer md:w-8 md:h-8'
+              className='w-6 h-6 cursor-pointer md:w-8 md:h-8 hover:text-black'
             />
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
 
-        <div className="flex flex-col items-start  md:h-full mb-6 md:mb-8">
+        <div className="flex flex-col items-start mb-6 md:h-full md:mb-8">
           <h3 className="text-left max-w-fit text-xl font-bold  py-1 md:py-1.5 mb-2  md:mb-4 border-b-4 border-blue-800 ">
             Properties
           </h3>
