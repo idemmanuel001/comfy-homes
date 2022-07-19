@@ -55,7 +55,7 @@ export default function Home({ propertiesForRent }) {
           </div>
 
           {/* background overlay with content*/}
-          <div className="absolute z-10 flex items-center justify-center w-full bg-black bg-opacity-60 h-65-vh md:h-85-vh">
+          <div className="absolute z-10 flex items-center justify-center w-full bg-black bg-opacity-50 h-65-vh md:h-85-vh">
             <div className='z-20 flex flex-col items-center w-10/12 md:max-w-screen-lg' >
               <h1 className='mb-2 text-4xl font-bold tracking-tight text-center text-white drop-shadow-sm md:text-6xl xl:text-7xl md:mb-5'>
                 Discover Your New Home
@@ -168,6 +168,36 @@ export default function Home({ propertiesForRent }) {
 
           )}
         </section>
+
+        <div className="relative w-screen h-65-vh md:h-85-vh">
+
+                {/* Background Image */}
+                <Image
+                  src='/images/banner-2-bg.jpg'
+                  alt='large barner'
+                  layout='fill'
+                  objectFit='cover'
+                  objectPosition='center'
+                
+                />
+
+          {/* Overlay with text content */}
+          <div className="absolute flex items-center justify-center w-full bg-black bg-opacity-50 h-65-vh md:h-85-vh ">
+                <div className='p-2 text-center text-white'>
+                  <h3 className="mb-4 text-2xl font-bold md:text-4xl">Trends</h3>
+                  <p className="mb-6 text-xl font-semibold md:mb-8 md:text-2xl">
+                    Dubai commercial real estate sales value jumps 89 percent in first half of 2022
+                  </p>
+                  
+                  <a href="https://www.arabianbusiness.com/money/wealth/money-wealth-real-estate/dubai-commercial-real-estate-sales-value-jumps-89-percent-in-first-half-of-2022-report"
+                    target="_blank" rel="noopener noreferrer"
+                    className='p-2 transition duration-300 ease-in-out bg-transparent border border-white rounded-md md:text-xl hover:border-blue-600'
+                  >
+                    Read More
+                  </a>
+                </div>
+          </div>
+        </div>
       </main>
 
     </>);
