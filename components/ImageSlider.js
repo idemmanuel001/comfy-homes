@@ -6,7 +6,7 @@ import { HiOutlineChevronDoubleLeft, HiOutlineChevronDoubleRight } from 'react-i
 //property details Image Slider
 export default function ImageSlider({ data }) {
     const [photos, setPhotos] = useState(data);
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(1);
 
     useEffect(() => {
         const lastIndex = photos.length - 1;
