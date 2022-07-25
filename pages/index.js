@@ -29,7 +29,7 @@ export default function Home({ propertiesForRent }) {
 
   //Targeting the location to scroll to when the user selects a location
   const locationRef = useRef(null);
-  
+
 
   useEffect(() => {
     if (locationProperties.length > 0) {
@@ -37,7 +37,7 @@ export default function Home({ propertiesForRent }) {
         behavior: "smooth",
       });
     }
-  }, [locationProperties]); 
+  }, [locationProperties]);
 
 
   return (
@@ -145,7 +145,7 @@ export default function Home({ propertiesForRent }) {
               >Available Properties in {locationProperties[0].location[1].name}</h2>
 
               {/* Properties for rent in the selcted location's container  */}
-              <div className="grid grid-rows-1 gap-6 my-6 overflow-hidden md:mt-8 md:mb-10 md:grid-cols-2 lg:grid-cols-3 md:flex-row ">
+              <div className="grid grid-rows-1 gap-6 my-6 overflow-hidden md:mt-8 md:mb-10 md:grid-cols-2 lg:grid-cols-3 ">
                 {viewMoreInSelectedLocation ?
                   locationProperties.map((property) => <Property property={property} key={property.id} />) :
                   locationProperties.slice(0, 3).map((property) => <Property property={property} key={property.id} />)}
@@ -166,38 +166,126 @@ export default function Home({ propertiesForRent }) {
               )}
             </div>
 
+
           )}
         </section>
 
         {/* Large barner */}
-        <div className="relative w-screen shadow-md h-65-vh md:h-85-vh">
+        <div className="relative w-screen overflow-x-hidden shadow-md h-65-vh md:h-85-vh">
 
-                {/* Background Image */}
-                <Image
-                  src='/images/banner-2-bg.jpg'
-                  alt='large barner'
-                  layout='fill'
-                  objectFit='cover'
-                  objectPosition='center'
-                
-                />
+          {/* Background Image */}
+          <Image
+            src='/images/banner-2-bg.jpg'
+            alt='large barner'
+            layout='fill'
+            objectFit='cover'
+            objectPosition='center'
+
+          />
 
           {/* Overlay with text content */}
           <div className="absolute flex items-center justify-center w-full bg-black bg-opacity-50 h-65-vh md:h-85-vh ">
-                <div className='p-2 text-center text-white'>
-                  <h3 className="mb-4 text-2xl font-bold md:text-4xl">Trends</h3>
-                  <p className="mb-6 text-xl font-semibold md:mb-8 md:text-2xl">
-                    Dubai commercial real estate sales value jumps 89 percent in first half of 2022
-                  </p>
-                  
-                  <a href="https://www.arabianbusiness.com/money/wealth/money-wealth-real-estate/dubai-commercial-real-estate-sales-value-jumps-89-percent-in-first-half-of-2022-report"
-                    target="_blank" rel="noopener noreferrer"
-                    className='p-2 transition duration-300 ease-in-out bg-transparent border border-white rounded-md md:text-xl hover:border-blue-600'
-                  >
-                    Read More
-                  </a>
-                </div>
+            <div className='p-2 text-center text-white'>
+              <h3 className="mb-4 text-2xl font-bold md:text-4xl">Trends</h3>
+              <p className="mb-6 text-xl font-semibold md:mb-8 md:text-2xl">
+                Dubai commercial real estate sales value jumps 89 percent in first half of 2022
+              </p>
+
+              <a href="https://www.arabianbusiness.com/money/wealth/money-wealth-real-estate/dubai-commercial-real-estate-sales-value-jumps-89-percent-in-first-half-of-2022-report"
+                target="_blank" rel="noopener noreferrer"
+                className='p-2 transition duration-300 ease-in-out bg-transparent border border-white rounded-md md:text-xl hover:border-blue-600'
+              >
+                Read More
+              </a>
+            </div>
           </div>
+
+        </div>
+
+        {/* Trends news and reports */}
+        <div className="flex flex-col md:flex-row items-center md:justify-center text-gray-800 my-10 overflow-hidden md:my-8 w-10/12 mx-auto md:py-8 md:max-w-screen-lg ">
+
+          {/* Item Card */}
+          <a
+            href="https://www.thenationalnews.com/business/property/2022/07/15/dubai-and-abu-dhabi-top-the-world-in-improving-real-estate-transparency-report-says/"
+            target="_blank" rel="noopener noreferrer"
+            className='rounded-t-md block md:mr-6 mb-6 md:mb-0 rounded-md bg-gray-100 overflow-hidden shadow hover:shadow-md active:border border-2 active:border-black '
+          >
+            
+            <div className="flex flex-col md:w-60 w-fit rounded-t-md overflow-hidden relative">
+              <span className='text-white bg-blue-800 px-2 py-0.5 rounded text-xs absolute top-3 left-4 w-fit z-20' >Report</span>
+              <div className='rounded-t-md w-fit' >
+                <Image
+                  src='/images/report-img.jpg'
+                  alt='image'
+                  width='400'
+                  height='260'
+                  objectFit='cover'
+                />
+              </div>
+
+              <h3 className='text-left py-1 px-4' >
+                Dubai and Abu Dhabi top the world in improving real estate transparency, report says
+              </h3>
+
+            </div>
+          </a>
+
+          
+          {/* Item Card */}
+          <a
+            href="https://www.arabianbusiness.com/money/wealth/money-wealth-real-estate/completed-homes-vs-off-plan-properties-uae-real-estate-market-marks-major-shift-in-demand"
+            target="_blank" rel="noopener noreferrer"
+            className='rounded-t-md block md:mr-6 mb-6 md:mb-0 rounded-md bg-gray-100 overflow-hidden shadow hover:shadow-md active:border border-2 active:border-black '
+          >
+            
+            <div className="flex flex-col md:w-60 w-fit rounded-t-md overflow-hidden relative">
+              <span className='text-white bg-blue-800 px-2 py-0.5 rounded text-xs absolute top-3 left-4 w-fit z-20' >Trends</span>
+              <div className='rounded-t-md w-fit' >
+                <Image
+                  src='/images/report-img-2.jpg'
+                  alt='image'
+                  width='400'
+                  height='260'
+                  objectFit='cover'
+                />
+              </div>
+
+              <h3 className='text-left py-1 px-4' >
+                Completed homes vs off-plan properties: UAE real estate market marks major shift in demand
+              </h3>
+
+            </div>
+          </a>
+
+          
+          {/* Item Card */}
+          <a
+            href="https://www.arabianbusiness.com/money/wealth/money-wealth-real-estate/how-the-uae-golden-visas-are-spurring-bollywood-interest-in-dubais-real-estate-market"
+            target="_blank" rel="noopener noreferrer"
+            className='rounded-t-md block md:mr-6 mb-6 md:mb-0 rounded-md bg-gray-100 overflow-hidden shadow hover:shadow-md active:border border-2 active:border-black '
+          >
+            
+            <div className="flex flex-col md:w-60 w-fit rounded-t-md overflow-hidden relative">
+              <span className='text-white bg-blue-800 px-2 py-0.5 rounded text-xs absolute top-3 left-4 w-fit z-20' >Celebrity Real Estate News</span>
+              <div className='rounded-t-md w-fit' >
+                <Image
+                  src='/images/celebrity.jpg'
+                  alt='image'
+                  width='400'
+                  height='260'
+                  objectFit='cover'
+                />
+              </div>
+
+              <h3 className='text-left py-1 px-4' >
+                How the UAE Golden Visas are spurring Bollywood interest in Dubai’s real estate market
+              </h3>
+
+            </div>
+          </a>
+
+          
 
         </div>
       </main>
