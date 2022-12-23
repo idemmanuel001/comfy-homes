@@ -12,6 +12,8 @@ import BackHome from '../../components/BackHome';
 
 export default function PropertyDetails({ propertyDetails: { price, rentFrequency, rooms, title, baths, agency, area, isVerified, description, type, amenities, furnishingStatus, photos, geography, phoneNumber: { phone, whatsapp } } }) {
     const [readMore, setReadMore] = useState(false)
+
+    
    
     return (
         <main className='w-full h-full mb-6 bg-white md:my-12'>
@@ -31,7 +33,7 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
 
                         {/* Price, Verification Status, and Basic Amenities */}
                         <div className="flex flex-col  items-start justify center mt-3 mb-2 md:mt-0 md:mb-0 font-bold">
-                            <h3 className="text-left text-lg mb-2 border-b-2 border-blue-800 ">Property Information</h3>
+                            <h3 className="text-left text-lg mb-2 md:mb-4 border-b-2 border-blue-800 ">Property Information</h3>
                             <p className='flex justify-center items-center text-center' >
                                 <span className='w-3.5 h-3.5 md:w-4 md:h-4  rounded bg-blue-600 mr-1 md:mr-2' ></span>  {rentFrequency ? 'For Rent' : 'For Sale'}
                             </p>
@@ -89,15 +91,8 @@ export default function PropertyDetails({ propertyDetails: { price, rentFrequenc
 
                     <div className="flex flex-col my-4 md:my-5">
                         <h3 className="text-left font-bold text-lg mb-2 border-b-2 border-blue-800 w-fit">Property Description</h3>
-                        <p className=" text-justify">
-                            
-                            {readMore ? description : `${description.substring(0, 220)}...` }
-
-                            <button 
-                            onClick={() => setReadMore(!readMore)}
-                            className=' text-center bg-white text-blue-800 ml-2'>
-                                {readMore ? 'show less' : '  read more'}
-                            </button>
+                        <p className=" text-justify" dangerouslySetInnerHTML={{__html: description}}>
+                          
                         </p>
                     </div>
 

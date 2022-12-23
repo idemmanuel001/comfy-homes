@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import { useRouter } from 'next/router';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
+import Loader from './Loader';
 
 
 //SearchOPtions for the various Emirates in U.A.E
@@ -25,21 +26,20 @@ export default function Search({ getLocationProperties }) {
         //Query the API using the value of the selected Option from the location searchbar
         if (selectedLocation?.value) {
             const fetchData = async () => {
-                //setting up the progree bar for page loading
-
+                setIsLoading(true)
                 //fetching the selected location data
                 const locationData = await fetchApi(`${baseUrl}/auto-complete?query=${selectedLocation.value}`);
 
-                //Getting the externalID (a required parameter to get the location's properties) from the returnedvalue
+                //Getting the externalID (a required parameter to get the location's properties) from the returned value
                 const externalID = locationData?.hits[0].externalID;
 
-                //Fetching the llst of properties for the current location
+                //Fetching the list of properties for the current location
                 const response = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=${externalID}&purpose=for-rent&hitsPerPage=21`);
                 const data = response?.hits;
 
                 //Passing the recieved data and loading state to the function from the index page
                 getLocationProperties(data);
-
+                setIsLoading(false)
             };
             fetchData();
 
@@ -62,8 +62,11 @@ export default function Search({ getLocationProperties }) {
             <button
                 onClick={(selectedOption) => setSelectedLocation(selectedOption)}
                 type="submit"
-                className="block w-20 h-full px-3 py-1 ml-1 font-bold text-white transition duration-300 ease-in-out border border-blue-800 border-solid rounded outline-none md:w-32 md:text-xl drop-shadow-md hover:drop-shadow-xl bg-gradient-to-r from-blue-400 to-blue-800 hover:text-black hover:from-blue-800 hover:to-blue-400 focus:opacity-90 focus:outline-none"
-            >Search</button>
+                className="flex justify-around items-center w-fit h-full px-3 py-1 ml-1 font-bold text-white transition duration-300 ease-in-out border border-blue-800 border-solid rounded outline-none md:w-32 md:text-xl drop-shadow-md hover:drop-shadow-xl bg-gradient-to-r from-blue-400 to-blue-800 hover:text-black hover:from-blue-800 hover:to-blue-400 focus:opacity-90 focus:outline-none"
+            >
+                {isLoading && <Loader />}
+                Search
+            </button>
         </div>
     );
 }

@@ -33,10 +33,12 @@ export default function HeroBgSlider() {
           <Image
               src={heroImages[imageIndex]}
               alt='hero section image'
+              placeholder='blur'
+              blurDataURL={heroImages[imageIndex]}
               priority='true'
               layout="fill"
               objectFit="cover"
-              quality={100}
+              quality={50}
           />
     </>
   )

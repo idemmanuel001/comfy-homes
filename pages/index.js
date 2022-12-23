@@ -7,6 +7,7 @@ import { baseUrl, fetchApi } from '../utils/fetchApi';
 import HeroBgSlider from '../components/HeroBgSlider';
 import SearchBar from '../components/SearchBar';
 import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
+import Loader from '../components/Loader';
 
 
 
@@ -107,6 +108,8 @@ export default function Home({ propertiesForRent }) {
                 alt='meeting'
                 width='700'
                 height='208'
+                placeholder='blur'
+                blurDataURL='/images/meeting.jpg'
                 objectFit='cover'
                 objectPosition='left center'
               />
@@ -177,6 +180,8 @@ export default function Home({ propertiesForRent }) {
           <Image
             src='/images/banner-2-bg.jpg'
             alt='large barner'
+            placeholder='blur'
+            blurDataURL='/images/banner-2-bg.jpg'
             layout='fill'
             objectFit='cover'
             objectPosition='center'
@@ -220,6 +225,8 @@ export default function Home({ propertiesForRent }) {
                   alt='image'
                   width='400'
                   height='260'
+                  placeholder='blur'
+                  blurDataURL='/images/report-img.jpg'
                   objectFit='cover'
                 />
               </div>
@@ -247,6 +254,8 @@ export default function Home({ propertiesForRent }) {
                   alt='image'
                   width='400'
                   height='260'
+                  placeholder='blur'
+                  blurDataURL='/images/report-img-2.jpg'
                   objectFit='cover'
                 />
               </div>
@@ -274,6 +283,8 @@ export default function Home({ propertiesForRent }) {
                   alt='image'
                   width='400'
                   height='260'
+                  placeholder='blur'
+                  blurDataURL='/images/celebrity.jpg'
                   objectFit='cover'
                 />
               </div>
@@ -284,8 +295,6 @@ export default function Home({ propertiesForRent }) {
 
             </div>
           </a>
-
-          
 
         </div>
       </main>
